@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {% load static %}
+{% block content %}
+
+<section class='main'>
+    <div class='header'>
+        <img src='/static/img/twt.svg' alt='twitter'/>
+        <h1>Twitter</h1>
+    </div>
+    <section class='user-info'>
+        <div class='user'>
+        <div class='user-img'>
+            <img src='/static/img/user.svg' alt='user'/>
+        </div>
+        <div class='tweet-form'>
+            <form action='/edit/{{edit_message.id}}/' method='POST' enctype='multipart/form-data'>{% csrf_token %}
+                <input class='input-name' type='text' name='name' placeholder="Your Name" value={{edit_message.name}} required/><br><br>
+                <textarea name='body' placeholder="what's happening" rows=4 cols=44 required>{{edit_message.body}}</textarea>
+                {% if edit_message.image.url %}
+                            <img src={{edit_message.image.url}} id='edit-my-image' />
+                {% endif %}
+                <div class='user-login'>
+                    <input id='choosefile' type='file' value='choose file' name='image' />
+                    <a href = '/'  class='edit-anchor'>
+                    <input class='edit-btn' type='submit' value='Cancel'/>
+                    </a>
+                    <input class='edit-btn' type='submit' value ='Edit'/>
+                </div>
+            </form>
+        </div>
+    </div>
+    </section>
+    <section class='all-tweets'>
+        <ul>
+            {% for post in message  %}
+            <li>
+                <section class='one-tweet'>
+                    <div class='inner-tweet-div'>
+                        <div class='my-img'>
+                           <img src={% static 'img/user.svg' %} />
+                        </div>
+                        <div class='tweet-info'>
+                            <div class='tweet-name-date'>
+                                <h2>{{post.name}}</h2>
+                                <p>{{post.created_at}}</p>
+                                <img id='menu' src={% static 'img/menu2.svg' %}/>
+                                <div class='js-menu'>
+                                    <a href= "/edit/{{post.id}}/">edit</a><br>
+                                    <a href = "/deleted/{{post.id}}/" >delete</a>
+                                </div>
+                            </div>
+                            <p>{{post.body}}</P>
+                            {% if post.image.url %}
+                            <img src={{post.image.url}} id='my-image' />
+                            {% endif %}
+                            <div class='like'>
+                                <a href="/likes/{{post.id}}/"><img id='heart' src={% static 'img/thumb.svg' %}></a>
+                                <h3>{{post.likes}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <script src = "{% static 'js/tweet.js' %}"></script>
+</section>
+
+{% endblock content %}
+

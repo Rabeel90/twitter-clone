@@ -1,0 +1,164 @@
+body{
+    margin:0;
+    font-family: Roboto;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+}
+
+.main{
+    width: 35vw;
+    margin: 0rem auto;
+}
+.main .header{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+.main .header img{
+    width: 3vw;
+    margin-left: 1rem;
+}
+
+/*******form**************/
+
+.main .user-info{
+   
+    width: 100%;
+   
+    
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+.main .user-info .user{
+    margin: 0rem auto;
+    display:flex;
+    width: 95%;
+    gap: 1rem;
+    padding: 1rem;
+}
+.main .user-info .user .tweet-form{
+    width: 85%;
+}
+.main .user-info img{
+    width: 3vw;
+}
+.main .user-info .user .input-name{
+    width: 100%;
+    border: none;
+    height: 5vh;
+    /* background-color: #e6fef7; */
+    font-size: 1rem;
+    outline: none;
+} 
+.main .user-info .user .input-name[type=text]{
+    padding-left: 1rem;
+    /* color: black !important; */
+}
+.main .user-info .user textarea{
+    border: none;
+    font-size: 1rem;
+    padding: 0rem 1rem 1rem 1rem;
+    outline: none;
+    background: transparent;
+    /* text-decoration-color: white; */
+    color: white;
+}
+::placeholder{
+    color: rgb(29, 161, 242);
+}
+.main .user-info .user .user-login{
+    border-top: 1px solid lightgray;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+}
+#tweet{
+    float: right;
+    background-color: rgb(29, 161, 242);
+    color: white;
+    border: none;
+    width: 4vw;
+    height: 4vh;
+    border-radius: 0.5rem;
+}
+#choosefile{
+    /* border: 1px solid gray; */
+    font-size: 1rem;
+    padding: 0.3rem;
+}
+.main .all-tweets #menu{
+    width: 2vw;
+}
+.main .all-tweets .one-tweet .inner-tweet-div{
+    width: 85%;
+    margin: 0 auto;
+}
+.main .all-tweets .one-tweet .my-img{
+    padding-top: 3vw;
+}
+.main .all-tweets ul{
+    padding: 0;
+}
+.main .all-tweets ul li{
+    border-top: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    /* border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray; */
+}
+.main .all-tweets .my-img img{
+    width: 3vw;
+}
+.main .inner-tweet-div{
+    display:flex;
+    gap: 1rem;
+}
+.main .inner-tweet-div .tweet-name-date{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main .all-tweets ul{
+    list-style: none;
+}
+.main .all-tweets .one-tweet{
+    position: relative;
+}
+.main .like img {
+    width: 2vw;
+}
+.main .all-tweets .one-tweet .js-menu a{
+    text-decoration: none;
+    color: white;
+}
+.main .inner-tweet-div .like{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.main #my-image{
+    width: 25vw;
+    height: 35vh;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    /* background-position: center; */
+}
+.main .all-tweets .tweet-info .js-menu{
+    display: none;
+    position: absolute;
+    left: 32vw;
+}
+.main #edit-my-image{
+    width: 25vw;
+    height: 35vh;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
